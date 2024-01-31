@@ -1,16 +1,19 @@
 * {
   box-sizing: border-box;
+
+
 }
 
 body {
   font-family: sans-serif;
   padding: 0;
   background-color: #9ea49e;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 h1 {
   margin-top: 0;
-  font-size: 22px;
+  font-size: 40px;
   text-align: center;
 }
 
@@ -47,38 +50,47 @@ ul {
   padding-inline-start: 20px;
 }
 
-* {
-  box-sizing: border-box;
-}
 
-body {
-  font-family: sans-serif;
-  margin: 20px;
-  padding: 0;
-}
+
 
 .square {
-  background: #fff;
-  border: 1px solid #999;
+  border: 5px solid #f0f0f0;
+  background: #9ea49e;
   float: left;
-  font-size: 24px;
+  font-size: 49px;
   font-weight: bold;
   line-height: 34px;
-  height: 34px;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 34px;
+
+ 
+}
+
+.s0 , .s1, .s2{
+  border-top: 0;
+}
+.s0, .s3, .s6 {
+  border-left: 0;
+}
+.s2, .s5, .s8 {
+  border-right: 0;
+}
+.s6, .s7, .s8 {
+  border-bottom: 0;
 }
 
 
+
 .game-board {
-  width: 50%;
+  width: 100%;
 
 }
 .status {
   margin-bottom: 10px;
+  text-align: center;
+  font-size: x-large;
 }
 .game {
   display: flex;
@@ -96,7 +108,7 @@ body {
 .board {
   display: grid;
   place-content: center;
-  grid-template-columns: repeat(3,34px);
-  grid-template-rows: repeat(3,34px);
+  grid-template-columns: repeat(3,100px);
+  grid-template-rows: repeat(3,100px);
  
 }

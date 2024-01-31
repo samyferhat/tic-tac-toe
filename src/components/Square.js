@@ -1,13 +1,13 @@
-import { useState } from "react";
 
-function Square({value, onSquareClick}) {
-    
+
+function Square({value, onSquareClick, i}) {
     return (
         <button 
-        className="square"
+        className={`square s${i}`}
         onClick={onSquareClick}
         >
             {value}
+            
         </button>
     )
 }
