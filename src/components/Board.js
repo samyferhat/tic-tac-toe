@@ -1,8 +1,9 @@
-import Square from './Square'
+import Square from './Square';
+import HeaderBoard from './HeaderBoard';
 
 
 function Board({ xIsNext, squares, onPlay }) {
-    
+
     function handleClick(i) {
         if (calculateWinner(squares) || squares[i]) {
             return;
@@ -26,17 +27,18 @@ function Board({ xIsNext, squares, onPlay }) {
 
     return (
         <>
-            <div className={`status ${winner && "winner"}`} ><h2>{status}</h2></div>
+            <HeaderBoard winner={winner} status={status}></HeaderBoard>
+
             <div className="board">
-    {squares.map((s, i) => (
-        <Square 
-            value={s}
-            onSquareClick={() => handleClick(i)}
-            key={i}
-            i={i}
-        />
-    ))}
-</div>
+                {squares.map((s, i) => (
+                    <Square
+                        value={s}
+                        onSquareClick={() => handleClick(i)}
+                        key={i}
+                        i={i}
+                    />
+                ))}
+            </div>
         </>
     );
 }
