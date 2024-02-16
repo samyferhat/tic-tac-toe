@@ -13,7 +13,12 @@ body {
 h1 {
     text-align: center;
 }
-
+.header-board {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
 .board {
     display: grid;
     grid-template-columns: repeat(3, 200px);
