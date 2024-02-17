@@ -4,6 +4,7 @@ import { useState } from 'react'
 function Game() {
   const [history, setHistory] = useState([Array(9).fill(null)]);
   const [currentMove, setCurrentMove] = useState(0);
+  const [lastMove, setLastMove] = useState(0);
   const xIsNext = currentMove % 2 === 0;
   const currentSquares = history[currentMove];
 
@@ -11,10 +12,19 @@ function Game() {
     const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
     setHistory(nextHistory);
     setCurrentMove(nextHistory.length - 1);
+    console.log("cur : " + currentMove)
+    updateLastMove();
+    console.log(" onplay : last " +lastMove + "  current " + currentMove )
   }
 
   function jumpTo(nextMove) {
     setCurrentMove(nextMove);
+  }
+
+  const updateLastMove = () => {
+    console.log(" cur update : " + currentMove + " last" + lastMove)
+    if(currentMove > lastMove) setLastMove(currentMove + 1);
+    console.log(" 2 cur update : " + currentMove + " last" + lastMove)
   }
 
   const moves = history.map((squares, move) => {
@@ -32,13 +42,32 @@ function Game() {
   });
 
   const handleRestart = () => {
-    jumpTo(0)
+    jumpTo(0);
+    setLastMove(0);
+  }
+  const handleGoBack = () => {
+    if (currentMove === 0) {
+      return;
+    }
+    jumpTo(currentMove - 1);
+  }
+  const handleGoFront = () => {
+    console.log("last " +lastMove + "  current " + currentMove )
+    if ( currentMove === lastMove || lastMove === 10) return;
+    jumpTo(currentMove + 1);
   }
 
   return (
     <div className="game">
       <div className="game-board">
-        <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
+        <Board xIsNext={xIsNext}
+          squares={currentSquares}
+          onPlay={handlePlay}
+          //
+          onGoBack={handleGoBack}
+          onGoFront={handleGoFront}
+
+        />
       </div>
       <div className="restart">
         <button className="restart-button" onClick={handleRestart}>
