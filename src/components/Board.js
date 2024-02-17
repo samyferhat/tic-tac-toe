@@ -2,7 +2,7 @@ import Square from './Square';
 import HeaderBoard from './HeaderBoard';
 
 
-function Board({ xIsNext, squares, onPlay }) {
+function Board({ xIsNext, squares, onPlay, onGoBack,onGoFront }) {
 
     function handleClick(i) {
         if (calculateWinner(squares) || squares[i]) {
@@ -27,7 +27,13 @@ function Board({ xIsNext, squares, onPlay }) {
 
     return (
         <>
-            <HeaderBoard winner={winner} status={status}></HeaderBoard>
+            <HeaderBoard
+                winner={winner}
+                status={status}
+                onGoBack={onGoBack}
+                onGoFront={onGoFront}
+            />
+
 
             <div className="board">
                 {squares.map((s, i) => (
