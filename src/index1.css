@@ -7,18 +7,20 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #282c34;
     color: white;
-  
+
 }
 
 h1 {
     text-align: center;
 }
+
 .header-board {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
 }
+
 .board {
     display: grid;
     grid-template-columns: repeat(3, 200px);
@@ -31,6 +33,7 @@ h1 {
     flex-direction: column;
 
 }
+
 .square {
     display: flex;
     align-items: center;
@@ -50,6 +53,7 @@ h1 {
 .square:hover {
     background-color: #4fa3d1;
 }
+
 .status {
     text-align: center;
 }
@@ -62,6 +66,7 @@ h1 {
     display: flex;
     flex-direction: column;
 }
+
 .restart-button {
     display: inline-block;
     background-color: #282c34;
@@ -75,19 +80,30 @@ h1 {
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s;
-    
-    
 
-  }
-  
-  .restart-button svg:hover {
+
+
+}
+
+.restart-button svg:hover {
     background-color: #2980b9;
     border-radius: 10px;
-    
-  }
-  
 
-  
+}
+
+
+.arrow-left:hover {
+    cursor: pointer;
+}
+
+.arrow-right:hover {
+    cursor: pointer;
+}
+
+.disabled-arrow {
+    color: #8c8c8c;
+}
+
 /* Responsive Styles */
 @media only screen and (max-width: 768px) {
     .board {
