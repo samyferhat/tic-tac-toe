@@ -9,7 +9,7 @@ function Game() {
   const currentSquares = history[currentMove];
 
   useEffect(() => {
-    if(currentMove > lastMove) setLastMove(currentMove);
+    if (currentMove > lastMove) setLastMove(currentMove);
   }, [currentMove, lastMove])
 
   function handlePlay(nextSquares) {
@@ -17,19 +17,19 @@ function Game() {
     setHistory(nextHistory);
     setCurrentMove(nextHistory.length - 1);
     console.log("cur : " + currentMove)
-  //  updateLastMove();
-    console.log(" onplay : last " +lastMove + "  current " + currentMove )
+    //  updateLastMove();
+    console.log(" onplay : last " + lastMove + "  current " + currentMove)
   }
 
   function jumpTo(nextMove) {
     setCurrentMove(nextMove);
   }
-/*
-  const updateLastMove = () => {
-    console.log(" cur update : " + currentMove + " last " + lastMove)
-    if(currentMove > lastMove) setLastMove(currentMove );
-    console.log(" after cur update : " + currentMove + " last " + lastMove)
-  }*/
+  /*
+    const updateLastMove = () => {
+      console.log(" cur update : " + currentMove + " last " + lastMove)
+      if(currentMove > lastMove) setLastMove(currentMove );
+      console.log(" after cur update : " + currentMove + " last " + lastMove)
+    }*/
 
   const moves = history.map((squares, move) => {
     let description;
@@ -56,8 +56,8 @@ function Game() {
     jumpTo(currentMove - 1);
   }
   const handleGoFront = () => {
-    console.log("last " +lastMove + "  current " + currentMove )
-    if ( currentMove === lastMove || currentMove === 8) return;
+    console.log("last " + lastMove + "  current " + currentMove)
+    if (currentMove === lastMove || currentMove === 8) return;
     jumpTo(currentMove + 1);
   }
 
@@ -70,7 +70,8 @@ function Game() {
           //
           onGoBack={handleGoBack}
           onGoFront={handleGoFront}
-
+          currentMove={currentMove}
+          lastMove={lastMove}
         />
       </div>
       <div className="restart">

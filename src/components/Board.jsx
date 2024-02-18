@@ -2,7 +2,7 @@ import Square from './Square';
 import HeaderBoard from './HeaderBoard';
 
 
-function Board({ xIsNext, squares, onPlay, onGoBack,onGoFront }) {
+function Board({ xIsNext, squares, onPlay, onGoBack, onGoFront, currentMove, lastMove }) {
 
     function handleClick(i) {
         if (calculateWinner(squares) || squares[i]) {
@@ -32,6 +32,8 @@ function Board({ xIsNext, squares, onPlay, onGoBack,onGoFront }) {
                 status={status}
                 onGoBack={onGoBack}
                 onGoFront={onGoFront}
+                currentMove={currentMove}
+                lastMove={lastMove}
             />
 
 
