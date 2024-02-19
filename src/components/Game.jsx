@@ -30,7 +30,7 @@ function Game() {
       if(currentMove > lastMove) setLastMove(currentMove );
       console.log(" after cur update : " + currentMove + " last " + lastMove)
     }*/
-
+/*
   const moves = history.map((squares, move) => {
     let description;
     if (move > 0) {
@@ -43,7 +43,7 @@ function Game() {
         <button onClick={() => jumpTo(move)}>{description}</button>
       </li>
     );
-  });
+  });*/
 
   const handleRestart = () => {
     jumpTo(0);
