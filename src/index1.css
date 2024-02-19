@@ -114,6 +114,7 @@ h1 {
     .square {
         width: 25vw;
         height: 25vw;
+        font-size: 6em;
     }
 }
 
@@ -126,6 +127,6 @@ h1 {
     .square {
         width: 30vw;
         height: 30vw;
-        font-size: 1.5em;
+        font-size: 5em;
     }
 }
