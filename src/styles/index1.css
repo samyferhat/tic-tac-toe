@@ -1,0 +1,133 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #282c34;
+    color: white;
+
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+}
+
+.header-board {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(3, 200px);
+    gap: 5px;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.square {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 10em;
+    font-weight: bold;
+    background-color: #61dafb;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+
+.square:hover {
+    background-color: #4fa3d1;
+}
+
+.status {
+    text-align: center;
+}
+
+.winner {
+    color: #28c447;
+}
+
+.restart {
+    display: flex;
+    flex-direction: column;
+}
+
+.restart-button {
+    display: inline-block;
+    background-color: #282c34;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+
+
+
+}
+
+.restart-button svg:hover {
+    background-color: #2980b9;
+    border-radius: 10px;
+
+}
+
+
+.arrow-left:hover {
+    cursor: pointer;
+}
+
+.arrow-right:hover {
+    cursor: pointer;
+}
+
+.disabled-arrow {
+    color: #8c8c8c;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+    .board {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    .square {
+        width: 25vw;
+        height: 25vw;
+        font-size: 6em;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .board {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    .square {
+        width: 30vw;
+        height: 30vw;
+        font-size: 5em;
+    }
+}
